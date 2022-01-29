@@ -15,7 +15,7 @@
 小游戏：吃掉小肇氰
 
 
-[Github Pages](https://arcxingye.github.io/EatKano/index.html)
+[源码](https://github.com/arcxingye/EatKano)
 
 ## 可选功能
 
