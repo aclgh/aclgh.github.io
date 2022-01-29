@@ -3,7 +3,7 @@
 </p>
 <div align="center">
 
-# EatKano
+# ACLGH
 
  网页小游戏_
 
@@ -12,7 +12,7 @@
 
 ## 简介
 
-小游戏：吃掉蘑古力
+小游戏：吃掉小肇氰
 
 
 [Github Pages](https://arcxingye.github.io/EatKano/index.html)
