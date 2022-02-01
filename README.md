@@ -16,9 +16,3 @@
 
 
 [源码](https://github.com/arcxingye/EatKano)
-
-## 可选功能
-
-简易排行榜(日/周/月) 不推荐使用
-
-不需要排行榜把php/sql文件都删掉即可
