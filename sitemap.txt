@@ -1,3 +1,7 @@
+http://example.com/movies/index.html
+http://example.com/music/index.html
+http://example.com/link/index.html
+http://example.com/about/index.html
 http://example.com/2023/01/04/test-my-site/
 http://example.com/2023/01/04/hello-world/
 http://example.com/
