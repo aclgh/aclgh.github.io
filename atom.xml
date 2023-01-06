@@ -73,9 +73,9 @@
     <category term="编程" scheme="http://example.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-    <category term="skills" scheme="http://example.com/tags/skills/"/>
-    
     <category term="program" scheme="http://example.com/tags/program/"/>
+    
+    <category term="skills" scheme="http://example.com/tags/skills/"/>
     
   </entry>
   

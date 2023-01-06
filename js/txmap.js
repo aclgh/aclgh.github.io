@@ -93,7 +93,7 @@ function showWelcome() {
                 case "江苏省":
                     switch (ipLoacation.result.ad_info.city) {
                         case "南京市":
-                            posdesc = "这是我挺想去的城市啦。";
+                            posdesc = "这是我在的城市~";
                             break;
                         case "苏州市":
                             posdesc = "上有天堂，下有苏杭。";
