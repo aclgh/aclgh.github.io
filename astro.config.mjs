@@ -25,6 +25,7 @@ const oklchToHex = str => {
   const regex = /-?\d+(\.\d+)?/g
   const matches = str.string.match(regex)
   const lch = [matches[0], matches[1], DEFAULT_HUE]
+  // @ts-ignore
   return new Color('oklch', lch).to('srgb').toString({
     format: 'hex',
   })
@@ -39,9 +40,9 @@ export default defineConfig({
     tailwind(),
     swup({
       theme: false,
-      animationClass: 'transition-swup-',   // see https://swup.js.org/options/#animationselector
-                                            // the default value `transition-` cause transition delay
-                                            // when the Tailwind class `transition-all` is used
+      animationClass: 'transition-swup-', // see https://swup.js.org/options/#animationselector
+      // the default value `transition-` cause transition delay
+      // when the Tailwind class `transition-all` is used
       containers: ['main', '#toc'],
       smoothScrolling: true,
       cache: true,
