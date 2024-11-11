@@ -223,12 +223,3 @@
 .collapsed {
     height: var(--collapsedHeight);
 }
-
-/* 注册你的自定义字体并告诉浏览器它在哪里 */
-@font-face {
-    font-family: '黑体UI-简';
-    src: url('/fonts/ZhuZiAWan-2.ttc') format('ttc');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
