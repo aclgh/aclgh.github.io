@@ -4,11 +4,11 @@ import I18nKey from '@i18n/i18nKey'
 import { i18n } from '@i18n/translation'
 
 export async function getSortedPosts(): Promise<
-  { body: string, data: BlogPostData; slug: string }[]
+  { body: string; data: BlogPostData; slug: string }[]
 > {
   const allBlogPosts = (await getCollection('posts', ({ data }) => {
     return import.meta.env.PROD ? data.draft !== true : true
-  })) as unknown as { body: string, data: BlogPostData; slug: string }[]
+  })) as unknown as { body: string; data: BlogPostData; slug: string }[]
 
   const sorted = allBlogPosts.sort(
     (a: { data: BlogPostData }, b: { data: BlogPostData }) => {
@@ -41,12 +41,27 @@ export async function getTagList(): Promise<Tag[]> {
   })
 
   const countMap: { [key: string]: number } = {}
-  allBlogPosts.map((post: { data: { tags: string[] } }) => {
-    post.data.tags.map((tag: string) => {
-      if (!countMap[tag]) countMap[tag] = 0
-      countMap[tag]++
-    })
-  })
+  allBlogPosts.map(
+    (post: {
+      id: string
+      slug: string
+      body: string
+      collection: string
+      data: {
+        tags?: string[]
+        lang?: string
+        title?: string
+        published?: Date
+        category?: string
+        nextSlug?: string
+      }
+    }) => {
+      post.data.tags.map((tag: string) => {
+        if (!countMap[tag]) countMap[tag] = 0
+        countMap[tag]++
+      })
+    },
+  )
 
   // sort tags
   const keys: string[] = Object.keys(countMap).sort((a, b) => {
@@ -66,16 +81,31 @@ export async function getCategoryList(): Promise<Category[]> {
     return import.meta.env.PROD ? data.draft !== true : true
   })
   const count: { [key: string]: number } = {}
-  allBlogPosts.map((post: { data: { category: string | number } }) => {
-    if (!post.data.category) {
-      const ucKey = i18n(I18nKey.uncategorized)
-      count[ucKey] = count[ucKey] ? count[ucKey] + 1 : 1
-      return
-    }
-    count[post.data.category] = count[post.data.category]
-      ? count[post.data.category] + 1
-      : 1
-  })
+  allBlogPosts.map(
+    (post: {
+      id: string
+      slug: string
+      body: string
+      collection: string
+      data: {
+        tags?: string[]
+        lang?: string
+        title?: string
+        published?: Date
+        category?: string
+        nextSlug?: string
+      }
+    }) => {
+      if (!post.data.category) {
+        const ucKey = i18n(I18nKey.uncategorized)
+        count[ucKey] = count[ucKey] ? count[ucKey] + 1 : 1
+        return
+      }
+      count[post.data.category] = count[post.data.category]
+        ? count[post.data.category] + 1
+        : 1
+    },
+  )
 
   const lst = Object.keys(count).sort((a, b) => {
     return a.toLowerCase().localeCompare(b.toLowerCase())
