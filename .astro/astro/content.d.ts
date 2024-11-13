@@ -192,6 +192,13 @@ declare module 'astro:content' {
   collection: "spec";
   data: any
 } & { render(): Render[".md"] };
+"friends.md": {
+	id: "friends.md";
+  slug: "friends";
+  body: string;
+  collection: "spec";
+  data: any
+} & { render(): Render[".md"] };
 };
 
 	};
