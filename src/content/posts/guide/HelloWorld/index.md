@@ -2,7 +2,7 @@
 title: Hello World
 published: 2024-04-01
 description: "How to use this blog template."
-image: "http//aclgh.top:40027/i/2024/11/18/673b2f582602f.jpg"
+image: "https://7365f31.webp.li/docs/1731939329451.jpg"
 tags: ["Code",]
 category: "Daliy"
 draft: false
@@ -13,6 +13,3 @@ draft: false
 当你看到这篇文章的时候，这个博客创建好了！
 
 
-
-
-<meta http-equiv="Content-Security-Policy" content="img-src http:">
