@@ -84,6 +84,6 @@ export const licenseConfig: LicenseConfig = {
 }
 export const commentConfig: CommentConfig = {
   twikoo: {
-    envId: 'http://aclgh.top:40063/',
+    envId: 'https://twikoo.aclgh.top/',
   },
 }
