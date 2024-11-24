@@ -84,6 +84,6 @@ export const licenseConfig: LicenseConfig = {
 }
 export const commentConfig: CommentConfig = {
   twikoo: {
-    envId: 'https://twikoo.aclgh.top/',
+    envId: 'https://zumdatwikoo.netlify.app/.netlify/functions/twikoo',
   },
 }
