@@ -148,6 +148,20 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
+"安卓逆向.md": {
+	id: "安卓逆向.md";
+  slug: "安卓逆向";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"安卓逆向2.md": {
+	id: "安卓逆向2.md";
+  slug: "安卓逆向2";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
 };
 "spec": {
 "about.md": {

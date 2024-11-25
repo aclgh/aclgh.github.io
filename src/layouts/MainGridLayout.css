@@ -1,0 +1,7 @@
+
+.wave-divider {
+    position: absolute;
+    width: 100%;
+    bottom: -1px; /* 调整波浪的位置 */
+    z-index: 20;
+}
