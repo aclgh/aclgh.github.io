@@ -1,3 +1,12 @@
+---
+title: 添加SSH公钥认证
+published: 2025-01-15
+description: "添加SSH公钥认证"
+image: "https://7365f31.webp.li/docs/1736924507453.jpg"
+tags: ["Code","Skill"]
+category: "Skill"
+draft: false
+---
 # 添加SSH公钥认证
 
 之前长期以来都是手动输入密码在vscode上连接远程服务器，但比较生草的是连接时输入一次，打开文件夹还要再输入一次，实在是反人类，就研究了一下怎么简单的开启SSH公钥认证并记录下来。
