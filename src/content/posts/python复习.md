@@ -5,7 +5,7 @@ description: "python复习笔记"
 image: "https://7365f31.webp.li/docs/1741025285363.png"
 tags: ["Code","Notes"]
 category: "Learning"
-draft: false
+draft: true
 ---
 # python复习
 
