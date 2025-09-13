@@ -1,6 +1,6 @@
 ---
 title: 如何在家庭宽带使用反向代理配置ssl
-published: 2025-9-14
+published: 2025-09-14
 description: "Let's Encrypt"
 image: "https://7365f31.webp.li/docs/1757792449.jpeg"
 tags: ["Code","Skill"]
