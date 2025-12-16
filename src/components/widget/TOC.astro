@@ -48,28 +48,42 @@ const removeTailingHash = (text: string) => {
 let heading1Count = 1;
 
 const maxLevel = siteConfig.toc.depth;
+
+// 计算相对层级
+const getRelativeDepth = (depth: number) => depth - minDepth;
+
+// 获取左边距
+const getMarginLeft = (depth: number) => {
+    const relativeDepth = getRelativeDepth(depth);
+    return relativeDepth * 16; // 每级增加 16px (即 ml-4)
+}
 ---
 <div class:list={[className]}>
-    {headings.filter((heading) => heading.depth < minDepth + maxLevel).map((heading) =>
+    {headings.filter((heading) => heading.depth < minDepth + maxLevel).map((heading) => {
+        const relativeDepth = getRelativeDepth(heading.depth);
+        const marginLeft = getMarginLeft(heading.depth);
+        
+        return (
             <a href={`#${heading.slug}`} class="px-2 flex gap-2 relative transition w-full min-h-9 rounded-xl
         hover:bg-[var(--toc-btn-hover)] active:bg-[var(--toc-btn-active)] py-2
     ">
                 <div class:list={["w-5 h-5 shrink-0 rounded-lg text-xs flex items-center justify-center font-bold",
                     {
-                        "bg-[var(--toc-badge-bg)] text-[var(--btn-content)]": heading.depth == minDepth,
-                        "ml-4": heading.depth == minDepth + 1,
-                        "ml-8": heading.depth == minDepth + 2,
+                        "bg-[var(--toc-badge-bg)] text-[var(--btn-content)]": relativeDepth === 0,
                     }
                 ]}
+                style={relativeDepth > 0 ? `margin-left: ${marginLeft}px` : ''}
                 >
-                    {heading.depth == minDepth && heading1Count++}
-                    {heading.depth == minDepth + 1 && <div class="w-2 h-2 rounded-[0.1875rem] bg-[var(--toc-badge-bg)]"></div>}
-                    {heading.depth == minDepth + 2 && <div class="w-1.5 h-1.5 rounded-sm bg-black/5 dark:bg-white/10"></div>}
+                    {relativeDepth === 0 && heading1Count++}
+                    {relativeDepth === 1 && <div class="w-2 h-2 rounded-[0.1875rem] bg-[var(--toc-badge-bg)]"></div>}
+                    {relativeDepth === 2 && <div class="w-1.5 h-1.5 rounded-sm bg-black/5 dark:bg-white/10"></div>}
+                    {relativeDepth >= 3 && <div class="w-1 h-1 rounded-sm bg-black/10 dark:bg-white/15"></div>}
                 </div>
                 <div class:list={["text-sm", {
-                    "text-50": heading.depth == minDepth || heading.depth == minDepth + 1,
-                    "text-30": heading.depth == minDepth + 2,
+                    "text-50": relativeDepth <= 1,
+                    "text-30": relativeDepth >= 2,
                 }]}>{removeTailingHash(heading.text)}</div>
             </a>
-    )}
+        );
+    })}
 </div>

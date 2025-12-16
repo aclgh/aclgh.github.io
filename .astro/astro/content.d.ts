@@ -141,9 +141,23 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"posts": {
+"cs61a notes.md": {
+	id: "cs61a notes.md";
+  slug: "cs61a-notes";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
 "guide/HelloWorld/index.md": {
 	id: "guide/HelloWorld/index.md";
   slug: "guide/helloworld";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"python复习.md": {
+	id: "python复习.md";
+  slug: "python复习";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">
@@ -158,6 +172,41 @@ declare module 'astro:content' {
 "安卓逆向2.md": {
 	id: "安卓逆向2.md";
   slug: "安卓逆向2";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"安卓逆向3.md": {
+	id: "安卓逆向3.md";
+  slug: "安卓逆向3";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"安卓逆向4.md": {
+	id: "安卓逆向4.md";
+  slug: "安卓逆向4";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"家宽ssl.md": {
+	id: "家宽ssl.md";
+  slug: "家宽ssl";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"数据结构复习.md": {
+	id: "数据结构复习.md";
+  slug: "数据结构复习";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"添加SSH公钥认证.md": {
+	id: "添加SSH公钥认证.md";
+  slug: "添加ssh公钥认证";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">
@@ -188,5 +237,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("../../src/content/config.js");
+	export type ContentConfig = typeof import("./../../src/content/config.js");
 }
